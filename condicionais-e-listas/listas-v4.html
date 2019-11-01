@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<div id="app">
+    <p>Percorre os elementos </p>
+    <ul>
+        <li v-for="pessoa in pessoas"> 
+            {{ pessoa.nome}}
+        </li>
+    </ul>
+    <hr>
+    <p>Percorre os elementos e atributos</p>
+    <ul>
+        <li v-for="pessoa in pessoas">
+            <!-- percorre os atributos dos elementos -->
+            <div v-for="valor in pessoa"> 
+                {{ valor }}
+            </div>
+        </li>
+    </ul>
+    <hr>
+    <p>Percorre os elementos e atributos e exibe as chaves</p>
+    <ul>
+        <li v-for="pessoa in pessoas">
+            <!-- percorre os atributos dos elementos -->
+            <div v-for="(valor, chave) in pessoa"> 
+                {{ chave }}: {{ valor }}
+            </div>
+        </li>
+    </ul>
+
+    <hr>
+    <p>Percorre os elementos e atributos, exibe as chaves e os indices</p>
+    <ul>
+        <li v-for="(pessoa, i) in pessoas">
+                 Objeto: {{ i + 1}} <br>
+            <!-- percorre os atributos dos elementos -->
+            <div v-for="(valor, chave, i) in pessoa"> 
+                {{ i + 1}}) {{ chave }}: {{ valor }}
+            </div>
+            <br>
+        </li>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            cores:['vermelho', 'verde', 'amarelo', 'azul'],
+            pessoas:[
+                { nome: 'Ana', idade: 26, peso: 59},
+                { nome: 'Guilherme', idade: 22, peso: 89}
+            ]
+        }
+    })
+</script>
+
+<style>
+    ul{
+        list-style: none;
+    }
+
+</style>
