@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<div id="app">
+    <p>Iterando em uma lista de numeros </p>
+    <span v-for="n in 10"> {{ n }} </span>
+    <hr>
+    <span v-for="j in numero"> {{j}} </span>
+    
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            numero : 22
+        }
+    })
+</script>
+
+<style>
+    ul{
+        list-style: none;
+    }
+
+</style>
