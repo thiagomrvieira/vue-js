@@ -1,6 +1,5 @@
 <template>
   <div class="contador">
-    <h1> Contadores </h1>
     <span>{{contador}}</span>
     <button @click="soma"> + </button>
     <button @click="subtrai"> - </button>
