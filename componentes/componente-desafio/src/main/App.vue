@@ -3,16 +3,15 @@
 		<navbar />
 		<toolbar />
 		<cont />
-		
 		<foot />
 	</v-app>
 </template>
 
 <script>
-import nav from './Nav.vue'
-import toll from './Tollbar.vue'
-import content from './Content.vue'
-import footer from './Footer.vue'
+import nav from '@/components/template/Nav.vue'
+import toll from '@/components/template/Tollbar.vue'
+import content from '@/Content.vue'
+import footer from '@/components/template/Footer.vue'
 
 export default {
 	data() {
