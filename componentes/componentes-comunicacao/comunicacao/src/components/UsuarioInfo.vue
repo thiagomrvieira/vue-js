@@ -8,7 +8,17 @@
 
 <script>
 export default {
-    props: ['nome'], 
+    props: {
+        // nome: String
+
+        // ou Pode ser do tipo String ou Array
+        // nome: [String, Array] // 
+        nome: {
+            type: String,
+            // required: true,
+            default: 'Thiago'
+        }
+    } ,
     // É possivel manipular dados passados como prop
     methods: {
         inverterNome(){
