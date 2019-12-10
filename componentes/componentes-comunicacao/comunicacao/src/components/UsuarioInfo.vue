@@ -3,6 +3,7 @@
         <h2>As Informações de Usuário</h2>
         <p>Vários detalhes...</p>
         <p> Nome do usuário: <strong> {{inverterNome()}} </strong> </p>
+        <p> Idade do usuário: <strong> {{idade}} </strong> </p>
         <button @click="reiniciarNome"> Reiniciar nome</button>
         <button @click="reiniciarFn">Alterar nome (callback)</button>
     </div>
@@ -20,7 +21,8 @@ export default {
             // required: true,
             default: 'Thiago'
         },
-        reiniciarFn: Function
+        reiniciarFn: Function,
+        idade: Number
     } ,
     // É possivel manipular dados passados como prop
     methods: {
@@ -28,8 +30,8 @@ export default {
             return this.nome.split('').reverse().join('')
         },
         reiniciarNome(){
-            this.nome = 'Pedro'
-            this.$emit('novoNome', this.nome)
+            // this.nome = 'Pedro'
+            this.$emit('novoNome', 'Pedro')
         }
     }
 }
