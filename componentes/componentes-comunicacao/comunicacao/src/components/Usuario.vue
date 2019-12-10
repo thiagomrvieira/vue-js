@@ -16,6 +16,8 @@
             <app-usuario-editar 
             :idade="idade"
             @novaIdade = "idade = $event"
+            :reiniciarId="reiniciarIdade"
+
 
             />
 
@@ -41,6 +43,9 @@ export default {
         },
         reiniciarNome(){
             this.nome = 'Pedro'
+        },
+        reiniciarIdade(){
+            this.idade = 31
         }
     }
 }

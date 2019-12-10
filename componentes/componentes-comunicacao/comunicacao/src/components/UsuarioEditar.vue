@@ -4,13 +4,16 @@
         <p>Edite as informações</p>
         <p> Idade do usuário: <strong> {{idade}} </strong> </p>
         <button @click="alterarIdade" > Alterar idade</button>
+        <button @click="reiniciarId" > Alterar idade (callback)</button>
+
     </div>
 </template>
 
 <script>
 export default {
     props: {
-        idade: Number
+        idade: Number,
+        reiniciarId: Function
     },
     methods:{
         alterarIdade(){
