@@ -4,6 +4,7 @@
         <p>Vários detalhes...</p>
         <p> Nome do usuário: <strong> {{inverterNome()}} </strong> </p>
         <button @click="reiniciarNome"> Reiniciar nome</button>
+        <button @click="reiniciarFn">Alterar nome (callback)</button>
     </div>
 </template>
 
@@ -18,7 +19,8 @@ export default {
             type: String,
             // required: true,
             default: 'Thiago'
-        }
+        },
+        reiniciarFn: Function
     } ,
     // É possivel manipular dados passados como prop
     methods: {
