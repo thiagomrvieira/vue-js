@@ -21,7 +21,9 @@
             alterarIdade(){
                 this.idade = 33
                 // this.$emit('novaIdade', 33)
-                barramento.$emit('novaIdade', this.idade)
+                // barramento.$emit('novaIdade', this.idade)
+                barramento.alterarIdade(this.idade)
+
 
             }
         }

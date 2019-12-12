@@ -38,7 +38,7 @@
             }
         },
         created(){
-            barramento.$on('novaIdade', idade => {
+            barramento.quandoIdadeMudar(idade => {
                 this.idade = idade
             })
         }
