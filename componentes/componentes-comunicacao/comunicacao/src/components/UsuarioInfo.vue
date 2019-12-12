@@ -10,31 +10,39 @@
 </template>
 
 <script>
-export default {
-    props: {
-        // nome: String
+    import barramento from '@/barramento'
 
-        // ou Pode ser do tipo String ou Array
-        // nome: [String, Array] // 
-        nome: {
-            type: String,
-            // required: true,
-            default: 'Thiago'
+    export default {
+
+        props: {
+            // nome: String
+
+            // ou Pode ser do tipo String ou Array
+            // nome: [String, Array] // 
+            nome: {
+                type: String,
+                // required: true,
+                default: 'Thiago'
+            },
+            reiniciarFn: Function,
+            idade: Number
+        } ,
+        // É possivel manipular dados passados como prop
+        methods: {
+            inverterNome(){
+                return this.nome.split('').reverse().join('')
+            },
+            reiniciarNome(){
+                // this.nome = 'Pedro'
+                this.$emit('novoNome', 'Pedro')
+            }
         },
-        reiniciarFn: Function,
-        idade: Number
-    } ,
-    // É possivel manipular dados passados como prop
-    methods: {
-        inverterNome(){
-            return this.nome.split('').reverse().join('')
-        },
-        reiniciarNome(){
-            // this.nome = 'Pedro'
-            this.$emit('novoNome', 'Pedro')
+        created(){
+            barramento.$on('novaIdade', idade => {
+                this.idade = idade
+            })
         }
     }
-}
 </script>
 
 <style scoped>

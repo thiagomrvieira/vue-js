@@ -15,10 +15,6 @@
             />
             <app-usuario-editar 
             :idade="idade"
-            @novaIdade = "idade = $event"
-            :reiniciarId="reiniciarIdade"
-
-
             />
 
         </div>
