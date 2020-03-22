@@ -9,17 +9,18 @@
 
 <script>
 export default {  
-  data(){
-    return {
-      id: this.$route.params.id,
-      teste: 'Thiago'
-    }
-  },
-  watch:{
-    $route(to, from){
-      this.id = to.params.id
-    }
-  },
+  // data(){
+  //   return {
+  //     id: this.$route.params.id,
+  //     teste: 'Thiago'
+  //   }
+  // },
+  // watch:{
+  //   $route(to, from){
+  //     this.id = to.params.id
+  //   }
+  // },
+  props: ['id'],
   methods:{
     irParaInicio(){
       // this.$router.push('/')
