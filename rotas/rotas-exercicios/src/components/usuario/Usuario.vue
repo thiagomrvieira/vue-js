@@ -25,8 +25,14 @@ export default {
     irParaInicio(){
       // this.$router.push('/')
       // ou
+      
+      // this.$router.push({
+      //   path: '/'
+      // })
+      
+      // rota nomeada
       this.$router.push({
-        path: '/'
+        name: 'inicio', path: '/'
       })
 
     }      
