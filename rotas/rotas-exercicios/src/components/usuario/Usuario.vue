@@ -2,7 +2,7 @@
   <div class="usuario">
       <h2>Usuarios</h2>
       <hr>
-      <p><strong>Código do usuário: </strong>{{id}}</p>
+      <router-view />
       <button sucesso @click="irParaInicio"> Voltar </button>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   //     this.id = to.params.id
   //   }
   // },
-  props: ['id'],
+ 
   methods:{
     irParaInicio(){
       // this.$router.push('/')
