@@ -11,7 +11,7 @@ import MenuAlt from './components/template/MenuAlt'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
     mode: 'history',
     scrollBehavior(to, from, savedPosition){
         if (savedPosition) {
@@ -41,9 +41,14 @@ export default new Router({
         props: true,
         children: [
             { path: '', component: UsuarioLista},
-            { path: ':id', component: UsuarioDetalhe, props: true},
+            { path: ':id', component: UsuarioDetalhe, props: true,
+                beforeEnter: (to, from, next) => {
+                    console.log('Antes da rota -> UsuarioDetalhe')
+                    next()
+                }
+            },
             { path: ':id/editar', component: UsuarioEditar, props: true,
-              name: 'editarUsuario'
+              name: 'editarUsuario', 
             }
         ]
     },{
@@ -55,3 +60,10 @@ export default new Router({
     }
 ]
 })
+
+router.beforeEach((to, from, next) => {
+    console.log('Antes da rota -> Global')
+    next()
+})
+
+export default router
